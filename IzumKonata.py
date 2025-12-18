@@ -1133,9 +1133,7 @@ if junk_code:
     junk().visit(code)
 
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), '[...] Compiling...'))
-compiled = compile(ast.unparse(code), '<IZUMKONATA>', 'exec')
-compiled = anti_decompile(compiled)
-code = marshal.dumps(compiled)
+code = marshal.dumps(compile(ast.unparse(code), '<IZUMKONATA>', 'exec'))
 
 def color_loading():
     for i in range(101):
@@ -1165,4 +1163,5 @@ final_output = final_output.replace("__GLOBALS__", final_gbl)
 open("obf-"+file_name,'wb').write(final_output.encode())
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Execution time {time.time()-st:.3f}s'))
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Saved file name {"obf-"+file_name}'))
+
 
