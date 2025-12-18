@@ -103,7 +103,7 @@ graph TD
 
 ## 🚀 Installation.
 
-Python 3.6 or later
+Python 3.8+ or later
 
 Module: pystyle (auto install if missing)
 
