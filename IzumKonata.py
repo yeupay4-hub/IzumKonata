@@ -765,51 +765,29 @@ def obfstr(s):
     return ast.Call(lam1,[ast.Constant("AnhNguyenCoder")],[])
 
 def anti_decompile(co):
-    import sys, types
+    bc = bytearray(co.co_code)
 
-    # append NOP ở CUỐI – an toàn tuyệt đối
-    bc = co.co_code + (b'\x00' * 32)
+    trash = bytes([random.randint(1, 255) for _ in range(30)])
+    bc = trash + bc
 
-    if sys.version_info >= (3, 11):
-        return types.CodeType(
-            co.co_argcount,
-            co.co_posonlyargcount,
-            co.co_kwonlyargcount,
-            co.co_nlocals,
-            co.co_stacksize,
-            co.co_flags,
-            bc,
-            co.co_consts,
-            co.co_names,
-            co.co_varnames,
-            co.co_filename,
-            co.co_name,
-            co.co_qualname,
-            co.co_firstlineno,
-            co.co_linetable,
-            co.co_exceptiontable,
-            co.co_freevars,
-            co.co_cellvars
-        )
-    else:
-        return types.CodeType(
-            co.co_argcount,
-            co.co_posonlyargcount,
-            co.co_kwonlyargcount,
-            co.co_nlocals,
-            co.co_stacksize,
-            co.co_flags,
-            bc,
-            co.co_consts,
-            co.co_names,
-            co.co_varnames,
-            co.co_filename,
-            co.co_name,
-            co.co_firstlineno,
-            co.co_lnotab,
-            co.co_freevars,
-            co.co_cellvars
-        )
+    return types.CodeType(
+        co.co_argcount,
+        co.co_posonlyargcount,
+        co.co_kwonlyargcount,
+        co.co_nlocals,
+        co.co_stacksize,
+        co.co_flags,
+        bytes(bc),
+        co.co_consts,
+        co.co_names,
+        co.co_varnames,
+        co.co_filename,
+        co.co_name,
+        co.co_firstlineno,
+        co.co_lnotab,
+        co.co_freevars,
+        co.co_cellvars
+    )
 
 def _safe_source(obj):
     try:
@@ -1187,3 +1165,4 @@ final_output = final_output.replace("__GLOBALS__", final_gbl)
 open("obf-"+file_name,'wb').write(final_output.encode())
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Execution time {time.time()-st:.3f}s'))
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Saved file name {"obf-"+file_name}'))
+
