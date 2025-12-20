@@ -588,7 +588,7 @@ try:
 
     if len(lines) != 58:
         raise Exception
-    if b"__OBF__ = ('IzumKonataV2.0')" not in lines[1]:
+    if b"__OBF__ = ('IzumKonataV3.1')" not in lines[1]:
         raise Exception
     if b"__OWN__ = ('Anhnguyencoder')" not in lines[2]:
         raise Exception
@@ -748,7 +748,7 @@ if __Anhnguyencoder__.__getattribute__.__code__.co_argcount < 1:
     print(">> AnhNguyenCoder...")
     AnhNguyenCoder('sys').exit()
 
-if __OBF__ != ('IzumKonataV2.0'):
+if __OBF__ != ('IzumKonataV3.1'):
     print(">> AnhNguyenCoder...")
     AnhNguyenCoder('sys').exit()
 if __OWN__ != ('Anhnguyencoder'):
@@ -820,7 +820,7 @@ try:
 
     if _f[0].strip() != b"#!/bin/python3":
         raise Exception
-    if b"__OBF__ = ('IzumKonataV2.0')" not in _f[1]: raise Exception
+    if b"__OBF__ = ('IzumKonataV3.1')" not in _f[1]: raise Exception
     if b"__OWN__ = ('Anhnguyencoder')" not in _f[2]: raise Exception
     if b"__USR__" not in _f[3]: raise Exception
     if b"__GBL__" not in _f[4]: raise Exception
@@ -1026,11 +1026,11 @@ except:
     AnhNguyenCoder("sys").exit()
 """
 
-BANNER = """                                                      ⠀⠀⠀⠀⠀ ⢀⡀⠀⠔⢀⡀⠀⢀⠞⢠⠂
+BANNER = """                                                      ⠀⠀⠀⠀⠀⢀⡀⠀⠔⢀⡀⠀⢀⠞⢠⠂
                                                              ⢸⠀⠘⢰⡃⠔⠩⠤⠦⠤⢀⡀
                                                      ⠀⠀⠀⠀⠀⢀⠄⢒⠒⠺⠆⠈⠀⠀⢐⣂⠤⠄⡀⠯⠕⣒⣒⡀
                                                           ⢐⡡⠔⠁⠆⠀⠀⠀⠀⠀⢀⠠⠙⢆⠀⠈⢁⠋⠥⣀⣀
- ⠀⠀   IZUMKONATA VERSION 1.0                          ⠈⠉⠀⠀⣰⠀⠀⠀⠀⡀⠀⢰⣆⢠⠠⢡⡀⢂⣗⣖⢝⡎⠉⠀⠀
+ ⠀⠀   IZUMKONATA VERSION 3.1                            ⠈⠉⠀⠀⣰⠀⠀⠀⠀⡀⠀⢰⣆⢠⠠⢡⡀⢂⣗⣖⢝⡎⠉⠀⠀
  COPYRIGHT BY NGUYEN NHAT NAM ANH                    ⢠⡴⠛⠀⡇⠀⠐⠀⡄⣡⢇⠸⢸⢸⡇⠂⡝⠌⢷⢫⢮⡜⡀⠀⠀⠀⠀⠀⠀
 ⠀     HIGH SPEED OBFUSCATOR                              ⢰⣜⠘⡀⢡⠰⠳⣎⢂⣟⡎⠘⣬⡕⣈⣼⠢⠹⡟⠇⠀⠀⠀⠀⠀
    ADVANCED IZUMKONATA OBFUSCATOR    ⠀⠀⠀                ⠠⢋⢿⢳⢼⣄⣆⣦⣱⣿⣿⣿⣷⠬⣿⣿⣿⣿⠑⠵⠀⠀⠀⠀⠀⠀
@@ -1093,7 +1093,7 @@ def enc(s: str) -> str:
     return f'{d}__AnhNGuyenCoder__{d}("{mapped}")'
 
 Lobby = f"""#!/bin/python3
-__OBF__ = ('IzumKonataV2.0')
+__OBF__ = ('IzumKonataV3.1')
 __OWN__ = ('Anhnguyencoder')
 __USR__ = ('__USER__')
 __GBL__ = ('__GLOBALS__')
